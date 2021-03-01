@@ -31,6 +31,18 @@
 
 //Code Here
 
+class Employee{
+  constructor(first,last,email,age){
+    this.first_name = first;
+    this.last_name = last;
+    this.email = email;
+    this.age = age;
+  }
+  makeWidget () {
+    return `${first_name} ${last_name} Widget`
+  }
+}
+
 
 ////////// PROBLEM 2 //////////
 
@@ -48,6 +60,20 @@
 */
 
 //Code Here
+
+class Manager extends Employee{
+  constructor (first,last,email,age, reports){
+    super(first,last,email,age)
+    this.reports = reports;
+  }
+  hire(newEmployee) {
+    this.reports.push (newEmployee)
+  }
+
+  fire(newFormerEmployee){
+
+  }
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -72,6 +98,18 @@
 */
 
 //Code Here
+
+class ProgressiveManager extends Manager{
+  constructor(first,last,email,age, reports){
+    super(first,last,email,age, reports)
+    this.title = 'Not a manager';
+    this.bonus = 0;
+  }
+  if (reports = 0){
+
+  }
+
+}
 
 
 
@@ -99,5 +137,29 @@
 */
 
 //Code Here
+
+class Machine {
+  constructor () {
+    this.widgets_made_count = 0;
+    this.wear_and_tear = 0;
+    this.needs_rebot = false;
+  }
+
+  makeWidgets(number){
+    this.widgets_made_count += number;
+    if((this.widgets_made_count % 50) == 0 && this.widgets_made_count > 1){
+      this.wear_and_tear += 1;
+    }
+  }
+
+  fixMchine(){
+    this.needs_rebot = true;
+  }
+
+  reboot(){
+    this.wear_and_tear -= 10;
+    this.needs_rebot = false;
+  }
+}
 
 
