@@ -57,7 +57,8 @@ function callFriend(name) {
 
 //Code Here
 
-let callJake = callFriend(Jake, 435-555-9248)
+let callJake = callFriend(Jake)
+callJake(435-555-9248)
 
 
 
@@ -159,14 +160,14 @@ var module = (function() {
   return {
     // Code here.
 
-    function publicMethod (){
+    publicMethod (){
       module.privateMethod
     }
 
   };
 })();
 
-
+ 
 
 ////////// PROBLEM 7 //////////
 
@@ -183,13 +184,15 @@ function secretNumber() {
   return {
     // Code here
 
-    function addToSecret (addNum) {
+    addToSecret (addNum) {
       secretNumber += addNum;
-    };
+      return secretNumber
+    },
 
-    function takeAwayFromSecret (takeNum){
+    takeAwayFromSecret (takeNum){
       secretNumber -= takeNum;
-    };
+      return secretNumber
+    }
 
   };
 };
