@@ -124,8 +124,12 @@ function motivation( firstname, lastname ) {
 
   // code message function here.
 
+  function message () {
+    return `${welcomeText} ${firstname} ${lastname}.`
+  };
+
   //Uncommment this to return the value of your message function
-  //return message;
+  return message;
 }
 
 var greeting = motivation('Billy', 'Bob'); // 'You're doing awesome keep it up Billy Bob.
@@ -154,6 +158,11 @@ var module = (function() {
   // outside our lexical scope
   return {
     // Code here.
+
+    function publicMethod (){
+      module.privateMethod
+    }
+
   };
 })();
 
@@ -173,8 +182,17 @@ function secretNumber() {
 
   return {
     // Code here
+
+    function addToSecret (addNum) {
+      secretNumber += addNum;
+    };
+
+    function takeAwayFromSecret (takeNum){
+      secretNumber -= takeNum;
+    };
+
   };
-}
+};
 
 
 
